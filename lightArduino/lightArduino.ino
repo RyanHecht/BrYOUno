@@ -28,22 +28,26 @@ void loop() {
     // If the state has changed from low to high, we should increment the counter
     if (btnState == HIGH) {
       count++;
-    } 
+      // change state according to the counter
+      if (count % 2 == 0) {
+        digitalWrite(servoPin1, HIGH);
+        digitalWrite(servoPin2, LOW);
+      } 
+      else {
+        digitalWrite(servoPin1, LOW);
+        digitalWrite(servoPin2, HIGH);
+      }
+    }
+    //set cooldown of one second
+    delay(1000);
   }
 
   // save this state as the old one for later
   oldBtnState = btnState;
 
 
-  // change state according to the counter
-  if (count % 2 == 0) {
-    digitalWrite(servoPin1, HIGH);
-    digitalWrite(servoPin2, LOW);
-  } 
-  else {
-    digitalWrite(servoPin1, LOW);
-    digitalWrite(servoPin2, HIGH);
-  }
+  
+
 
 }
 
