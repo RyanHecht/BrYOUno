@@ -1,7 +1,9 @@
+// Once upon a time, two servos were used to drive the switch. Now there's only one, on pin 9, but pin 5 is still ready to go just in case
+
 
 // Pin declaration
 const int btnPin = A0; // manual button trigger
-const int remPin = A1; // pin for remote trigger 
+const int remPin = A4; // pin for remote trigger 
 const int servoPin1 = 5;
 const int servoPin2 = 9;
 
