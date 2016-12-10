@@ -6,7 +6,7 @@ import pyaudio
 sys.path.append('/home/pi/BrYOUno/utils')
 import talker
 
-def getVoice(prompt=true):
+def getVoice(prompt=True):
     print "getting voice..."
     r = sr.Recognizer()
 
@@ -32,4 +32,22 @@ def getVoice(prompt=true):
         audio = r.listen(source)
     print "out of microphone"
     speech = r.recognize_google(audio)
-    return speech
+    return speech.lower()
+
+def select(choices, selector="Option"):
+    talker.say("Select a " + selector)
+    index = 0
+    for choice in choices:
+        talker.say(str(index))
+        talker.say(choice)
+        index = index + 1
+    voice = getVoice(prompt=False)
+    if "repeat" in voice:
+        return select(choices, selector)
+    else:
+        try:
+            res_index = int(voice)
+        except ValueError:
+            nums = {'zero':0,'one':1,'two':2,'to':2,'too':2,'three':3,'four':4,'for':4,'five':5,'six':6,'seven':7,'eight':8,'nine':9,'ten':10}
+            res_index = nums[voice]
+        return choices[res_index]

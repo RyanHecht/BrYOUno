@@ -40,13 +40,13 @@ def onBruno(detector):
         else:
             talker.say("Starting MCParks radio")
             r = requests.get("http://0.0.0.0/mcp/start")
-    elif "christmas" in voice:
+    elif "google" in voice:
         if "music" in voice:
             if "stop" in voice:
-                talker.say("Stopping Christmas playlist")
+                talker.say("Stopping Google Play Music")
                 r = requests.get("http://0.0.0.0/music/stop")
             else:
-                talker.say("Playing Christmas playlist")
+                talker.say("Playing Google Play Music")
                 r = requests.get("http://0.0.0.0/music/start")
     elif voice == "how are you doing":
         talker.say("I am doing well.")

@@ -23,7 +23,7 @@ def start():
             player = subprocess.Popen(["mplayer", "http://mcparks.us/audio_files/gfpiano.mp3", "-ss", str(pos)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 def stop():
     global player
-    player.stdin.write("q")
+    player.terminate()
     player = ""
     talker.say("Music stopped.")
 if __name__ == "__main__":
