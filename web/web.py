@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, current_app
 from gevent.wsgi import WSGIServer
 import time
 import RPi.GPIO as GPIO
@@ -16,6 +16,11 @@ def lights():
 	time.sleep(0.1)
 	GPIO.output(12, GPIO.LOW)
 	return "done"
+
+@app.route("/switch")
+def get_lightswitch():
+	return current_app.send_static_file('lightswitch.html')
+
 
 @app.route("/mcp/start")
 def start_mcpr():
@@ -37,6 +42,11 @@ def stop_music():
 	google_music.stop()
 	return "stopped"
 
+@app.route("/version")
+def get_version():
+	return "0.1"
+
 if __name__ == "__main__":
+	print "Starting webserver"
 	http_server = WSGIServer(('', 80), app)
 	http_server.serve_forever()

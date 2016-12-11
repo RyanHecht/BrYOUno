@@ -27,44 +27,49 @@ def onBruno(detector):
     except sr.RequestError as e:
         talker.say("Could not decode speech. You probably used up your API credits, idiot")
 
-
-    print voice
-    voice = voice.lower()
-    if "lights" in voice:
-        talker.say("Toggling lights")
-        r = requests.get("http://0.0.0.0/lights")
-    elif "radio" in voice:
-        if "stop" in voice:
-            talker.say("Stopping music")
-            r = requests.get("http://0.0.0.0/mcp/stop")
-        else:
-            talker.say("Starting MCParks radio")
-            r = requests.get("http://0.0.0.0/mcp/start")
-    elif "google" in voice:
-        if "music" in voice:
+    try:
+        print voice
+        voice = voice.lower()
+        if "lights" in voice:
+            talker.say("Toggling lights")
+            r = requests.get("http://0.0.0.0/lights")
+        elif "radio" in voice:
             if "stop" in voice:
-                talker.say("Stopping Google Play Music")
-                r = requests.get("http://0.0.0.0/music/stop")
+                talker.say("Stopping music")
+                r = requests.get("http://0.0.0.0/mcp/stop")
             else:
-                talker.say("Playing Google Play Music")
-                r = requests.get("http://0.0.0.0/music/start")
-    elif voice == "how are you doing":
-        talker.say("I am doing well.")
-        talker.say("Thank you for asking!")
-    elif "help" in voice:
-        talker.say("Help menu coming soon.")
-    elif voice == "what can you do":
-        talker.say("I can perform a variety of functions")
-        talker.say("First, say 'Hey Bruno' to activate me")
-        talker.say("Then, ask me to turn off the lights,")
-        talker.say("play Christmas Music,")
-        talker.say("Or to open MCParks radio")
-        talker.say("Or, ask me how I'm doing!")
-    else:
-        talker.say("No command found.")
-        talker.say("Say 'help'")
-        talker.say("for a list of functions")
-    listen_loop()
+                talker.say("Starting MCParks radio")
+                r = requests.get("http://0.0.0.0/mcp/start")
+        elif "google" in voice:
+            if "music" in voice:
+                if "stop" in voice:
+                    talker.say("Stopping Google Play Music")
+                    r = requests.get("http://0.0.0.0/music/stop")
+                else:
+                    talker.say("Playing Google Play Music")
+                    r = requests.get("http://0.0.0.0/music/start")
+        elif voice == "how are you doing":
+            talker.say("I am doing well.")
+            talker.say("Thank you for asking!")
+        elif "help" in voice:
+            talker.say("Help menu coming soon.")
+        elif voice == "what can you do":
+            talker.say("I can perform a variety of functions")
+            talker.say("First, say 'Hey Bruno' to activate me")
+            talker.say("Then, ask me to turn off the lights,")
+            talker.say("play Christmas Music,")
+            talker.say("Or to open MCParks radio")
+            talker.say("Or, ask me how I'm doing!")
+        else:
+            talker.say("No command found.")
+            talker.say("Say 'help'")
+            talker.say("for a list of functions")
+    except:
+        print "Encountered an error in command handling"
+        talker.say("Encountered an error.")
+        talker.say("Sorry.")
+    finally:
+        listen_loop()
 
 if __name__ == "__main__":
     listen_loop()
