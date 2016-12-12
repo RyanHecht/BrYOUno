@@ -2,6 +2,13 @@
 ###### The in-dorm personal assistant
 ###### Features, demos, and partial dependency list below
 ![BrYOUno main setup](https://lh3.googleusercontent.com/jAE1QA25SvL6YfqY-jTqnHvQ5rLyk_wp83soyXtteHmFeDP7UCK2zBD2hZSqito6JAGdpP9yoIoOcryw_lC3AATTdL3KwQrQymM-MdBBAToZ-h09NVnLKDElR82jU1uKBKkwv3cLLrIYMuaEmErlkhFp1KTdFGa0xIcPwNceaENxQZ5OyMtAheHATBAg8H6prRXHW_5GU01PeYvRPvhsg4y7SkEBeZ3_IuWTHUJHZj448u7_yXnVVm9LramI8v28coFTNsfGTn6C8rnxnyoO2CzfWTKpWh5S_nFFbwNnwwjh3s0w2n9Fya3GrSRQ9w53ARudT2KyXdsO9PW-qiXJA7KSqwW2Pul5qq9qL13jXffne--kH51fo4dkqZcLUPKuQ_Mo8IqOf3SgDp-3TKimzzv8tcDJJhGabFgfWnL03BZSsuHVUJrexEPBehtG1YV0eyK13qkoR4e7MYsgIGCt7DACCtmJt5NLHkTFe1bz2RmiQ6AJaHkcsEcTCdFPh22WRjXgDk1geaQUEdSg6OtdztRnUEpcEzswwAvU7IwMWSA_0jKeWu2GfYX7_F9IodS-KdAf0YXQn0v-zMeoPYCOQLyg0Z1Ajs1Pvgn7Rd1LZmbjI-Xolzc4=w713-h950-no)
+
+## Background
+
+A personal automation assistant for my dorm room is something I've planned on making before even coming to college, and luckily for me,
+an automation class gave me an excuse to make it sooner than I'd expected! Armed with a Raspberry Pi, some electronics, an Arduino Uno,
+and a whole 'lotta Python, I've created version 1.0 of BrYOUno (Bruno to his friends). [Ask him how he's doing!](https://www.youtube.com/watch?v=kiSEGOG-h4Y)
+
 ## Features
 *Automates dorm lightswitch
 
