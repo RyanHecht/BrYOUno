@@ -1,5 +1,6 @@
 # BrYOUno
 ###### The in-dorm personal assistant
+###### Features, demos, and partial dependency list below
 ![BrYOUno main setup](https://lh3.googleusercontent.com/jAE1QA25SvL6YfqY-jTqnHvQ5rLyk_wp83soyXtteHmFeDP7UCK2zBD2hZSqito6JAGdpP9yoIoOcryw_lC3AATTdL3KwQrQymM-MdBBAToZ-h09NVnLKDElR82jU1uKBKkwv3cLLrIYMuaEmErlkhFp1KTdFGa0xIcPwNceaENxQZ5OyMtAheHATBAg8H6prRXHW_5GU01PeYvRPvhsg4y7SkEBeZ3_IuWTHUJHZj448u7_yXnVVm9LramI8v28coFTNsfGTn6C8rnxnyoO2CzfWTKpWh5S_nFFbwNnwwjh3s0w2n9Fya3GrSRQ9w53ARudT2KyXdsO9PW-qiXJA7KSqwW2Pul5qq9qL13jXffne--kH51fo4dkqZcLUPKuQ_Mo8IqOf3SgDp-3TKimzzv8tcDJJhGabFgfWnL03BZSsuHVUJrexEPBehtG1YV0eyK13qkoR4e7MYsgIGCt7DACCtmJt5NLHkTFe1bz2RmiQ6AJaHkcsEcTCdFPh22WRjXgDk1geaQUEdSg6OtdztRnUEpcEzswwAvU7IwMWSA_0jKeWu2GfYX7_F9IodS-KdAf0YXQn0v-zMeoPYCOQLyg0Z1Ajs1Pvgn7Rd1LZmbjI-Xolzc4=w713-h950-no)
 ## Features
 *Automates dorm lightswitch
@@ -65,6 +66,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 ### Alternative input
 
 In addition to voice commands, system may be controlled through web dashboard (Made with Google's Materialize CSS library)
+I have this one running on a tablet mounted above my bed.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=T9fPB6J6O5I
 " target="_tab"><img src="http://img.youtube.com/vi/T9fPB6J6O5I/0.jpg"
@@ -76,11 +78,48 @@ All actions and errors are logged in an SQLite database, which is viewable onlin
 
 ![database-viewer](http://image.prntscr.com/image/003e053aae6d47f589fc428ad6336862.png)
 
+### Hardware Dependencies
 
-### Software Dependencies on Raspberry Pi
++Raspberry Pi (model 3 used)
+
++Microphone with onboard sound card
+
++Speakers
+
++Electronics for IR transmitter circuit (transmitter/LED, PNP transistor, resistor)
+
++Electronics for IR receiver (receiver, servo)
+
++Arduino (Uno used)
+
++Tablet/Phone/Computer for web interface
+
+### Software Dependencies on Raspberry Pi (partial list, I'm more than likely forgetting stuff)
 
 +Raspian 8
 
 +Python 2.7
 
 +[Snowboy](http://docs.kitt.ai/snowboy/)
+
++[SpeechRecognition](https://pypi.python.org/pypi/SpeechRecognition/)
+
++[PyAudio 0.2.9+](https://pypi.python.org/pypi/PyAudio)
+
++[Websocket client](https://pypi.python.org/pypi/websocket-client/)
+
++[pyttsx](https://pypi.python.org/pypi/pyttsx)
+
++[Flask](http://flask.pocoo.org/)
+
++[WSGI webserver](https://wsgi.readthedocs.io/en/latest/)
+
++[sqlite-web](https://github.com/coleifer/sqlite-web)
+
++[GMusicProxy](http://gmusicproxy.net/)
+
++[pytodoist](http://pytodoist.readthedocs.io/en/latest/)
+
++[urllib](https://docs.python.org/2/library/urllib.html)
+
+That's all I can think of, if I'm missing anything, feel free to open an issue!
