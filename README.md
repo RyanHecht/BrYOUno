@@ -75,3 +75,12 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 All actions and errors are logged in an SQLite database, which is viewable online with sqllite-web
 
 ![database-viewer](http://image.prntscr.com/image/003e053aae6d47f589fc428ad6336862.png)
+
+
+### Software Dependencies on Raspberry Pi
+
++Raspian 8
+
++Python 2.7
+
++[Snowboy](http://docs.kitt.ai/snowboy/)
