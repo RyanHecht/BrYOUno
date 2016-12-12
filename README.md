@@ -3,12 +3,19 @@
 ![BrYOUno main setup](https://lh3.googleusercontent.com/jAE1QA25SvL6YfqY-jTqnHvQ5rLyk_wp83soyXtteHmFeDP7UCK2zBD2hZSqito6JAGdpP9yoIoOcryw_lC3AATTdL3KwQrQymM-MdBBAToZ-h09NVnLKDElR82jU1uKBKkwv3cLLrIYMuaEmErlkhFp1KTdFGa0xIcPwNceaENxQZ5OyMtAheHATBAg8H6prRXHW_5GU01PeYvRPvhsg4y7SkEBeZ3_IuWTHUJHZj448u7_yXnVVm9LramI8v28coFTNsfGTn6C8rnxnyoO2CzfWTKpWh5S_nFFbwNnwwjh3s0w2n9Fya3GrSRQ9w53ARudT2KyXdsO9PW-qiXJA7KSqwW2Pul5qq9qL13jXffne--kH51fo4dkqZcLUPKuQ_Mo8IqOf3SgDp-3TKimzzv8tcDJJhGabFgfWnL03BZSsuHVUJrexEPBehtG1YV0eyK13qkoR4e7MYsgIGCt7DACCtmJt5NLHkTFe1bz2RmiQ6AJaHkcsEcTCdFPh22WRjXgDk1geaQUEdSg6OtdztRnUEpcEzswwAvU7IwMWSA_0jKeWu2GfYX7_F9IodS-KdAf0YXQn0v-zMeoPYCOQLyg0Z1Ajs1Pvgn7Rd1LZmbjI-Xolzc4=w713-h950-no)
 ## Features
 *Automates dorm lightswitch
+
 *Plays Google Play Music
+
 *Plays audio from MCParks Audio Server (a personal project of mine)
+
 *Lists, adds, and completes Todoist tasks
+
 *Queries Brown Dining API (or it will, when the API is updated)
+
 *Logs all actions/errors to SQLite database
+
 *Voice activated, or controllable from web dashboard
+
 
 ### Lights
 *GPIO digital output to infrared transmitter circuit
