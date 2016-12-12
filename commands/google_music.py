@@ -1,12 +1,19 @@
+# Interface between BrYOUno and GMusicProxy
 import getVoice
 import sys
 sys.path.append('/home/pi/BrYOUno/utils')
+import db
 import talker
 import subprocess
 import urllib
 import requests
 
+
+
+# Initialize player as empty string. A check for this will tell whether music is currently Playing
 player = ""
+
+# Talker will ask user to select between song, artist, station, and playlist, and call the proper function
 def play():
     global player
     print "playing"
@@ -18,29 +25,38 @@ def play():
     elif option == "playlist":
         playlist()
 
+# If there is a player playing, stop it
 def stop():
     global player
-    if not (player == ""):
-        player.terminate()
+    player.terminate()
     player = ""
     talker.say("Music stopped")
 
+# If the user wants to play a song or artist, we use the get_by_search API call, the specifics for which are determined here
 def search(option):
+    global player
     url = "http://0.0.0.0:9999/get_by_search?type=" + option
     talker.say("Speak search query:")
     query = getVoice.getVoice(prompt=False)
     if option == "song":
         url += "&title=" + urllib.quote(query)
+        db.log_action("gplaymusic", "played song " + query)
         player = setPlayer(["mplayer", url + "&num_tracks=1"])
+
     elif option == "artist":
         url += "&artist=" + urllib.quote(query)
+        db.log_action("gplaymusic", "played artist " + query)
         player = setPlayer(["mplayer", "-playlist", url])
 
+# In the case of a station, this API call must be made
 def station():
+    # NOT YET IMPLEMENTED
     url = ""
 
 
+# In the case of a playlist, the user says a keyword to identify the playlist by, and the system selects the first one that comes up
 def playlist():
+    global player
     talker.say("Say playlist keyword:")
     query = getVoice.getVoice(prompt=False)
     playlists_text = requests.get("http://pi.ryanhecht.net:9999/get_all_playlists?format=text").text[:-1]
@@ -56,8 +72,10 @@ def playlist():
     if playlist_url == "":
         talker.say("Playlist not found. Sorry.")
     else:
+        db.log_action("gplaymusic", "played playlist " + query)
         player = setPlayer(["mplayer", "-shuffle", "-playlist", playlist_url])
 
+# Will start an mplayer subprocess with the arguments given, opening the URL to get the playlist/song
 def setPlayer(args):
     if player == "":
         return subprocess.Popen(args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
