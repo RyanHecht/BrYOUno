@@ -9,18 +9,22 @@ import datetime
 
 # go is the main function, is looped since you may want to do many of these operations at once.
 def go():
-    option = getVoice.select(['list tasks', 'add task', 'check off task', 'cancel'], selector="action")
-    with open("/home/pi/todoist.txt", "r") as pw_file:
-        pw = pw_file.read().replace('\n', '')
-    user = todoist.login('ryanhecht.tse@gmail.com', pw)
+    try:
+        option = getVoice.select(['list tasks', 'add task', 'check off task', 'cancel'], selector="action")
+        with open("/home/pi/todoist.txt", "r") as pw_file:
+            pw = pw_file.read().replace('\n', '')
+        user = todoist.login('ryanhecht.tse@gmail.com', pw)
 
-    if option == 'list tasks':
-        lst(user)
-    elif option == "add task":
-        add(user)
-    elif option == "check off task":
-        check(user)
-
+        if option == 'list tasks':
+            lst(user)
+        elif option == "add task":
+            add(user)
+        elif option == "check off task":
+            check(user)
+    except Exception as e:
+        print("Encountered error")
+        talker.say("Encountered error")
+        db.log_error(type(e).__name__, str(e), __file__)
 # Lists all open tasks in inbox
 def lst(user):
     db.log_action("todoist", "list tasks")

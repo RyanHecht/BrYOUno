@@ -1,43 +1,45 @@
 <!doctype html>
 <html>
+
 <head>
-  <style>
-    body {
-      background-color: #d2d4d8;+
-    }
-  </style>
-<meta charset="utf-8">
-<title>BrYOUno Lightswitch</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <style>
+        body {
+            background-color: #d2d4d8;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>BrYOUno Lightswitch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 
- <link rel="stylesheet" href="https//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="https//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
 </head>
 
 
 <body>
-  <nav>
-    <div class="nav-wrapper blue" style="text-align:left">
-      <h1 class="brand-logo" style="text-align:left" id="logo">BrYOUno</h1>
+    <nav>
+        <div class="nav-wrapper blue" style="text-align:left">
+            <h1 class="brand-logo" style="text-align:left" id="logo">BrYOUno</h1>
+        </div>
+    </nav>
+    <div class="container valign-wrapper" style="margin:auto;display:block;text-align:center">
+        <a class="btn-floating btn-large waves-effect waves-light black" style="height:900px;width:900px;position:absolute;top:30%;left:5%" onclick="toggle()">
+            <div style="margin:auto;display:block;text-align:center"><i class="large material-icons valign" style="font-size:700px;position:absolute;top:45%;left:12%">lightbulb_outline</i></div>
+        </a>
     </div>
-  </nav>
-<div class="container valign-wrapper" style="margin:auto;display:block;text-align:center">
-<a class="btn-floating btn-large waves-effect waves-light black" style="height:900px;width:900px;position:absolute;top:30%;left:5%" onclick="toggle()"><div style="margin:auto;display:block;text-align:center"><i class="large material-icons valign" style="font-size:700px;position:absolute;top:45%;left:12%">lightbulb_outline</i></div></a>
-</div>
-  <script>
-  jQuery.get("http://pi.ryanhecht.net/version").done(function(data) {
-    document.getElementById("logo").innerHTML = "BrYOUno v" + data
-  });
+    <script>
+        jQuery.get("http://pi.ryanhecht.net/version").done(function(data) {
+            document.getElementById("logo").innerHTML = "BrYOUno v" + data
+        });
 
-  function toggle() {
-    jQuery.get("http://pi.ryanhecht.net/lights")
-  }
-
-  </script>
+        function toggle() {
+            jQuery.get("http://pi.ryanhecht.net/lights")
+        }
+    </script>
 </body>
 
 

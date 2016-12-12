@@ -8,7 +8,7 @@
         }
     </style>
     <meta charset="utf-8">
-    <title>BrYOUno Lightswitch</title>
+    <title>BrYOUno Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 
     <link rel="stylesheet" href="https//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
@@ -90,7 +90,7 @@
                         <span class="card-title"><i class="material-icons left" onclick="database()">question_answer</i>Stats</span>
                     </div>
                     <div class="card-action center-align">
-                        <a class="waves-effect waves-light btn-large">Launch Database</a>
+                        <a class="waves-effect waves-light btn-large"  onclick="database()">Launch Database</a>
                     </div>
                 </div>
             </div>
@@ -125,7 +125,7 @@
           jQuery.get("http://pi.ryanhecht.net/food")
         }
         function database() {
-          window.location.href = "http://pi.ryanhecht.net:12345"
+          window.location = "http://pi.ryanhecht.net:12345"
         }
     </script>
 </body>

@@ -16,21 +16,27 @@ player = ""
 # Talker will ask user to select between song, artist, station, and playlist, and call the proper function
 def play():
     global player
-    print "playing"
-    option = getVoice.select(["song", "artist", "station", "playlist"])
-    if option == "song" or option == "artist":
-        search(option)
-    elif option == "station":
-        station()
-    elif option == "playlist":
-        playlist()
-
+    if player == "":
+        try:
+            print "playing"
+            option = getVoice.select(["song", "artist", "station", "playlist"])
+            if option == "song" or option == "artist":
+                search(option)
+            elif option == "station":
+                station()
+            elif option == "playlist":
+                playlist()
+        except Exception as e:
+            print("error encountered")
+            talker.say("Encountered error.")
+            db.log_error(type(e).__name__, str(e), __file__)
 # If there is a player playing, stop it
 def stop():
     global player
-    player.terminate()
-    player = ""
-    talker.say("Music stopped")
+    if player != "":
+        player.terminate()
+        player = ""
+        talker.say("Music stopped")
 
 # If the user wants to play a song or artist, we use the get_by_search API call, the specifics for which are determined here
 def search(option):
