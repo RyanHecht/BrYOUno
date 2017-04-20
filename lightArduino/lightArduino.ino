@@ -17,6 +17,9 @@ void setup() {
   pinMode(remPin, INPUT);
   pinMode(servoPin1, OUTPUT);
   pinMode(servoPin2, OUTPUT);
+
+  pinMode(10, OUTPUT);
+  digitalWrite(10, HIGH);
 }
 
 
