@@ -6,12 +6,16 @@ import time
 def toggle():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(12, GPIO.OUT)
+    #print("on")
     GPIO.output(12, GPIO.HIGH)
     time.sleep(0.099)
+    #print("off")
     GPIO.output(12, GPIO.LOW)
-    time.sleep(0.099)
+    time.sleep(0.75)
+    #print("on")
     GPIO.output(12, GPIO.HIGH)
-    time.sleep(0.1)
+    time.sleep(0.5)
+    #print("off")
     GPIO.output(12, GPIO.LOW)
 
 if __name__ == "__main__":

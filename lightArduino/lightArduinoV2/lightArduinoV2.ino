@@ -36,7 +36,6 @@ void loop() {
     if (lock2 == false) {
       if (remState == LOW) {
         lock2 = true;
-        delay(100)
       } else {
         resetLocks();
       }
