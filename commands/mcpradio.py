@@ -4,6 +4,8 @@ sys.path.append('/home/pi/BrYOUno/utils')
 import talker
 import subprocess
 player = ""
+
+# Connects to the MCParks Audio Websocket server, asks to be played Grand Floridan piano music
 def start():
     global player
     if player == "":
@@ -21,6 +23,7 @@ def start():
             pos = int(splt[1]) / 1000
             toplay = splt[2]
             player = subprocess.Popen(["mplayer", "http://mcparks.us/audio_files/gfpiano.mp3", "-ss", str(pos)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+# Terminates musc playing
 def stop():
     global player
     player.terminate()

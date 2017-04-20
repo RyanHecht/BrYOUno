@@ -57,7 +57,7 @@ def select(choices, selector="Option"):
         try:
             res_index = int(voice)
         except ValueError:
-            nums = {'zero':0,'one':1,'two':2,'to':2,'too':2,'three':3,'four':4,'for':4,'five':5,'six':6,'seven':7,'eight':8,'nine':9,'ten':10}
+            nums = {'zero':0,'one':1,'two':2,'to':2,'too':2,'three':3,'tree':3,'free':3,'four':4,'for':4,'five':5,'six':6,'seven':7,'eight':8,'nine':9,'ten':10}
             res_index = nums[voice]
         db.log_action("voice", choices[res_index])
         return choices[res_index]

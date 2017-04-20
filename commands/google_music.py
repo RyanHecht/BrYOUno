@@ -78,10 +78,17 @@ def playlist():
     if playlist_url == "":
         talker.say("Playlist not found. Sorry.")
     else:
+        talker.say("Would you like it shuffled?")
+        shuffle = getVoice.getVoice(prompt=False)
+        if shuffle == "yes":
+            player = setPlayer(["mplayer", "-shuffle", "-playlist", playlist_url])
+        else:
+            player = setPlayer(["mplayer", "-playlist", playlist_url])
         db.log_action("gplaymusic", "played playlist " + query)
-        player = setPlayer(["mplayer", "-shuffle", "-playlist", playlist_url])
+
 
 # Will start an mplayer subprocess with the arguments given, opening the URL to get the playlist/song
 def setPlayer(args):
     if player == "":
-        return subprocess.Popen(args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        #return subprocess.Popen(args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        return subprocess.Popen(args)
