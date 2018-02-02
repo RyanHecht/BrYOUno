@@ -99,33 +99,33 @@
 
 
     <script>
-        jQuery.get("http://pi.ryanhecht.net/version").done(function(data) {
+        jQuery.get("/version").done(function(data) {
             document.getElementById("logo").innerHTML = "BrYOUno v" + data
         });
 
         function toggle() {
-            jQuery.get("http://pi.ryanhecht.net/lights")
+            jQuery.get("/lights")
         }
         function music_start() {
-          jQuery.get("http://pi.ryanhecht.net/music/start")
+          jQuery.get("/music/start")
         }
         function music_stop() {
-          jQuery.get("http://pi.ryanhecht.net/music/stop")
+          jQuery.get("/music/stop")
         }
         function radio_start() {
-          jQuery.get("http://pi.ryanhecht.net/mcp/start")
+          jQuery.get("/mcp/start")
         }
         function radio_stop() {
-          jQuery.get("http://pi.ryanhecht.net/radio/stop")
+          jQuery.get("/radio/stop")
         }
         function todoist() {
-          jQuery.get("http://pi.ryanhecht.net/todoist")
+          jQuery.get("/todoist")
         }
         function food() {
-          jQuery.get("http://pi.ryanhecht.net/food")
+          jQuery.get("/food")
         }
         function database() {
-          window.location = "http://pi.ryanhecht.net:12345"
+          window.location = "URL_HERE:12345"
         }
     </script>
 </body>

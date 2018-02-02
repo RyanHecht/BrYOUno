@@ -65,7 +65,7 @@ def playlist():
     global player
     talker.say("Say playlist keyword:")
     query = getVoice.getVoice(prompt=False)
-    playlists_text = requests.get("http://pi.ryanhecht.net:9999/get_all_playlists?format=text").text[:-1]
+    playlists_text = requests.get("URL_HERE:9999/get_all_playlists?format=text").text[:-1]
     all_playlists = playlists_text.split("\n")
     index = 0
     playlist_url = ""

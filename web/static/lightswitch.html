@@ -32,12 +32,12 @@
         </a>
     </div>
     <script>
-        jQuery.get("http://pi.ryanhecht.net/version").done(function(data) {
+        jQuery.get("/version").done(function(data) {
             document.getElementById("logo").innerHTML = "BrYOUno v" + data
         });
 
         function toggle() {
-            jQuery.get("http://pi.ryanhecht.net/lights")
+            jQuery.get("/lights")
         }
     </script>
 </body>
